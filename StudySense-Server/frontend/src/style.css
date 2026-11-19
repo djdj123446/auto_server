@@ -1,0 +1,123 @@
+/* ===================== 全局基础样式（普通扁平风格） ===================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --card-bg: #ffffff;
+  --card-border: #e4e7ed;
+  --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  --page-bg: #f5f7fa;
+  --text-main: #1f2d3d;
+  --text-sub: #606266;
+  --text-weak: #909399;
+}
+
+body {
+  font-family: 'Helvetica Neue', Helvetica, 'PingFang SC', 'Microsoft YaHei', Arial, sans-serif;
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  background: var(--page-bg);
+  min-height: 100vh;
+}
+
+/* ===================== 卡片 ===================== */
+
+.page-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin-bottom: 24px;
+  box-shadow: var(--card-shadow);
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--text-main);
+}
+
+/* ===================== Element Plus 适配 =====================
+   注意：按需引入后组件库样式晚于本文件加载，同优先级会被反超，
+   页面内组件统一加 #app 前缀提权；teleport 到 body 的组件用 body 前缀 */
+
+/* 菜单 */
+#app .el-menu {
+  background: transparent;
+}
+
+#app .menu .el-menu-item {
+  color: var(--text-sub);
+}
+
+#app .menu .el-menu-item:hover {
+  background: #f5f7fa;
+}
+
+#app .menu .el-menu-item.is-active {
+  background: #ecf5ff;
+  color: #337ecc;
+}
+
+/* 表格 */
+#app .el-table {
+  background-color: #fff;
+  --el-table-bg-color: #fff;
+  --el-table-tr-bg-color: #fff;
+  --el-table-header-bg-color: #f5f7fa;
+  --el-table-header-text-color: var(--text-sub);
+  --el-table-row-hover-bg-color: #f5f7fa;
+  --el-table-border-color: #ebeef5;
+  --el-table-border: 1px solid #ebeef5;
+}
+
+#app .el-table th.el-table__cell {
+  background: #f5f7fa;
+}
+
+#app .el-table__inner-wrapper::before {
+  display: none;
+}
+
+/* 弹出层（下拉、日期选择等，teleport 到 body 下，用 body 前缀提权） */
+body .el-popper.is-light {
+  background: #fff;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+}
+
+body .el-popper.is-light .el-popper__arrow::before {
+  background: #fff;
+  border-color: var(--card-border);
+}
+
+body .el-dropdown-menu .el-dropdown-menu__item:hover {
+  background: #ecf5ff;
+}
+
+/* 消息提示 */
+body .el-message {
+  background: #fff;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+}
+
+/* 滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(31, 45, 61, 0.18);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}

@@ -1,0 +1,4 @@
+.pio/
+.pio_core/
+.vscode/
+compile_commands.json

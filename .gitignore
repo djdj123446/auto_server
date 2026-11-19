@@ -1,0 +1,50 @@
+# ============================================================
+# StudySense 智能书房环境调节系统
+# ============================================================
+
+# ---------- 依赖 / 虚拟环境 ----------
+node_modules/
+.pnpm-store/
+.venv/
+venv/
+
+# ---------- 构建产物（npm run build 可重新生成） ----------
+dist/
+.pio/
+.pio_core/
+compile_commands.json
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ---------- 本地配置与密钥（严禁上传） ----------
+# 后端：数据库密码、管理员密码、JWT 密钥
+.env
+.env.*
+!.env.example
+# 固件：真实 WiFi 名称/密码、后端局域网 IP
+StudySense/src/config.h
+*.pem
+*.key
+*.p12
+
+# ---------- 日志 / 缓存 / 调试 ----------
+*.log
+build_log*.txt
+.dbg/
+.npm-cache/
+.cache/
+coverage/
+
+# ---------- IDE / 系统杂项 ----------
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+desktop.ini
